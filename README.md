@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Corsódigo: Course Recommendation App
+
+This project is a **Course Recommendation App** called **Corsódigo** that integrates **FastAPI** for the backend and **Next.js** for the frontend. The application provides recommendations based on a user's query and displays course cards in an interactive way, with the ability to expand into a detailed view.
+
+## Features
+
+- **Search for courses** using FastAPI and sentence embeddings with FAISS
+- **Course cards** with images, titles, descriptions, and platform logos
+- **Interactive card expansion** for viewing more details
+- **Scroll feature** for large descriptions in the overlay modal
+- **Responsive layout** for desktop and mobile
+- **Loading state** with an animated loader and fun "Please wait" message
+
+## Tech Stack
+
+### Backend
+- **FastAPI**: Web framework for building APIs
+- **FAISS**: Library for efficient similarity search in large datasets
+- **Sentence-Transformers**: For generating embeddings and semantic search
+
+### Frontend
+- **Next.js**: React framework for building SSR/SSG web apps
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+1. Python 3.8+
+2. Node.js (for frontend)
+3. pipenv or virtualenv (for backend Python environment)
+4. npm or yarn (for frontend package management)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Setup Backend (FastAPI)
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.	Run the FastAPI server:
+    ```bash
+    uvicorn main:app --reload
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3.	The API will be running on http://127.0.0.1:8000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Setup Frontend (Next.js)
+1.	Install dependencies:
+    ``` bash
+    npm install
+    ```
 
-## Learn More
+2.	Run the Next.js development server:
+    ``` bash
+    npm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3.	The app will be available at http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### API Endpoints
+- POST /search: Fetch course recommendations based on a query and number of results (top_k).
+- Request body:
+    ```bash
+    {
+        "query": "machine learning courses",
+        "top_k": 5
+    }
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Response:
+    ```bash
+    {
+    "results": [
+        {
+        "title": "Introduction to Machine Learning",
+        "url": "https://www.coursera.org/learn/ml",
+        "image": "https://www.example.com/image.jpg",
+        "description": "A beginner-friendly course on machine learning."
+        },
+        ...
+    ]
+    }
+    ```
 
-## Deploy on Vercel
+# Frontend Components
+- CourseCard: Displays course information as a clickable card. Expands into a modal overlay showing detailed information when clicked.
+- CoursesPage: Fetches data from the backend API and displays a grid of CourseCard components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Notes
+- The project uses CORS in FastAPI to enable cross-origin requests from the frontend.
+- Tailwind CSS is used for styling and layout management, making the app responsive and clean.
+- The overlay modal for the course cards allows users to view the full course description and a link to the course.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Future Improvements
+- Add user authentication (login/signup)
+- Implement course filtering (by category, difficulty, etc.)
+- Improve loading states and transitions
+- Deploy the app to a cloud platform (e.g., AWS, Vercel)
+
+# License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
