@@ -2,6 +2,11 @@
 'use client'
 
 import React, { useState } from 'react';
+import { Sora } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+
+const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
+const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
 interface QuestionOption {
   label: string;
@@ -123,7 +128,7 @@ const Survey: React.FC<SurveyProps> = ({ onSubmit }) => {
   return (
     <div className="p-6 mx-auto">
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2 text-black dark:text-white">{currentQuestion.question}</h2>
+        <h2 className={`text-xl font-semibold mb-2 text-black dark:text-white ${PoppinsFont.className}`}>{currentQuestion.question}</h2>
         {currentQuestion.type === 'text' ? (
           <textarea
             className="w-full p-2 border rounded"

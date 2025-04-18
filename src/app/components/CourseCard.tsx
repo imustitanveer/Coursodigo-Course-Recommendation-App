@@ -2,6 +2,12 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { Sora } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+
+const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
+const Sora2Font = Sora({ subsets: ['latin'], weight: '700' });
+const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
 interface CourseCardProps {
   title: string
@@ -27,7 +33,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ title, url, image, description 
           className="object-cover w-full h-auto"
         />
         <div className="p-4 space-y-2">
-          <h3 className="text-lg font-semibold line-clamp-2">{title}</h3>
+          <h3 className={`text-lg font-semibold line-clamp-2 ${PoppinsFont.className}`}>{title}</h3>
         </div>
       </div>
 
@@ -50,7 +56,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ title, url, image, description 
             />
             <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{title}</h3>
             <div className="h-64 overflow-y-auto pr-2">
-              <p className="text-gray-700 dark:text-white/80 text-sm leading-relaxed whitespace-pre-line">
+              <p className={`text-gray-700 dark:text-white/80 text-sm leading-relaxed whitespace-pre-line ${SoraFont.className}`}>
                 {description}
               </p>
             </div>
@@ -58,7 +64,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ title, url, image, description 
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-black dark:text-white hover:underline text-sm font-md font-semibold mt-4"
+              className={`inline-flex items-center gap-2 text-black dark:text-white hover:underline text-sm font-md font-semibold mt-4 ${Sora2Font.className}`}
             >
               View Course
               <svg

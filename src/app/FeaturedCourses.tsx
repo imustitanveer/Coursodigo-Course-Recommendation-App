@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import CourseCard from '@/app/components/CourseCard'
+import { Poppins } from 'next/font/google';
+
+const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
 interface Course {
   title: string
@@ -36,7 +39,7 @@ export default function FeaturedCourses() {
 
   return (
     <div className="min-h-screen px-6 py-10">
-      <h1 className="text-4xl font-bold mb-6">Recommended Courses</h1>
+      <h1 className={`text-4xl font-bold mb-6 ${PoppinsFont.className}`}>Recommended Courses</h1>
       {loading ? (
         // Empty cards with flashing animation
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
