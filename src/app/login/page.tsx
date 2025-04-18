@@ -25,7 +25,7 @@ export default function SignupPage() {
     <>
     < Navbar />
     <div className="min-h-screen flex items-center justify-center p-6">
-      <form onSubmit={handleLogin} className="mx-auto w-1/3 p-20 rounded-xl space-y-4 bg-[#E76F51] text-white">
+      <form onSubmit={handleLogin} className="mx-auto w-full md:w-1/3 p-6 md:p-20 rounded-xl space-y-4 bg-[#E76F51] text-white">
         <h2 className={`text-4xl font-semibold ${PoppinsFont.className}`}>Login</h2>
         <input
           type="email"
