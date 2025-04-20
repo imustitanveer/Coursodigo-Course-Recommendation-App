@@ -1,5 +1,6 @@
 'use client';
-import Link from 'next/link'
+
+import Link from 'next/link';
 import { Outfit } from 'next/font/google';
 import { Sora } from 'next/font/google';
 import { getCurrentUser } from 'aws-amplify/auth';
@@ -23,7 +24,7 @@ export default function Navbar() {
       <div className="flex justify-start gap-2 items-center p-4 w-1/2">
         <img src="/coursodigo.png" alt="Coursodigo" className="w-12 h-12" />
         <h1 className={`font-bold text-3xl text-white ${OutfitFont.className}`}>
-          <Link href="/">Corsódigo</Link>
+          <Link href={isLoggedIn ? '/courses' : '/'}>Corsódigo</Link>
         </h1>
       </div>
 

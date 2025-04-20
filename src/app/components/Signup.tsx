@@ -158,7 +158,9 @@ function RedirectOnLogin({ user }: { user?: any }) {
 
   useEffect(() => {
     if (user) {
-      router.push('/');
+      const hasCompletedSurvey = localStorage.getItem('hasCompletedSurvey') === 'true';
+
+      router.push(hasCompletedSurvey ? '/courses' : '/survey');
     }
   }, [user]);
 

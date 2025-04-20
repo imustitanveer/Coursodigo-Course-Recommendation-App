@@ -119,6 +119,7 @@ const Survey: React.FC<SurveyProps> = ({ onSubmit }) => {
 
   const handleSubmit = () => {
     onSubmit(responses);
+    localStorage.setItem('hasCompletedSurvey', 'true');
   };
 
   const currentQuestion = questions[step];
