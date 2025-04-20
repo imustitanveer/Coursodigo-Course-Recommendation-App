@@ -5,6 +5,8 @@ import CourseCard from '@/app/components/CourseCard';
 import Navbar from '../Navbar';
 import AuthenticatedRoute from '../components/AuthenticatedRoute';
 
+const apiUrl = process.env.NEXT_PUBLIC_FAISS_API_URL || 'http://localhost:8000';
+
 interface Course {
   title: string;
   url: string;
@@ -32,7 +34,7 @@ export default function CoursesPage() {
       if (!query) return;
 
       try {
-        const res = await fetch('http://localhost:8000/search', {
+        const res = await fetch('${apiUrl}/search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query, top_k: 15 }), // ✅ increase result count
