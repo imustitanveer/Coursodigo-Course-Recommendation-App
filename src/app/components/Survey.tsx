@@ -2,10 +2,8 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Sora } from 'next/font/google';
 import { Poppins } from 'next/font/google';
 
-const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
 const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
 interface QuestionOption {

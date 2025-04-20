@@ -9,22 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.6.0",
+    "@aws-amplify/auth": "^6.12.2",
+    "@aws-amplify/ui-react": "^6.11.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.787.0",
     "@heroicons/react": "^2.2.0",
     "@next-auth/prisma-adapter": "^1.0.7",
+    "amazon-cognito-identity-js": "^6.3.15",
+    "aws-amplify": "^6.14.2",
+    "aws-sdk": "^2.1692.0",
+    "clsx": "^2.1.1",
+    "js-cookie": "^3.0.5",
     "next": "^15.3.0",
     "next-auth": "^4.24.11",
+    "openid-client": "^6.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@aws-amplify/backend": "^1.14.3",
+    "@aws-amplify/backend-cli": "^1.5.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20.17.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "aws-cdk": "^2.1003.0",
+    "aws-cdk-lib": "^2.180.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.2",
     "eslint": "^9",
     "eslint-config-next": "15.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   }
 }

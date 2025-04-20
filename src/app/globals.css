@@ -24,3 +24,42 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Inputs */
+[data-amplify-authenticator] input {
+  @apply w-full border border-gray-300 bg-white text-black px-4 py-2 rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#E9C46A];
+}
+
+/* Labels */
+[data-amplify-authenticator] label {
+  @apply text-xs font-medium text-gray-500 dark:text-gray-100 mb-1;
+}
+
+/* Primary buttons only (like Login / Sign Up) */
+[data-amplify-authenticator] .amplify-button--primary {
+  @apply w-full bg-[#2A9D8F] text-white font-bold py-2 px-4 rounded-2xl mt-3 hover:bg-[#21867b] hover:cursor-pointer;
+}
+
+/* Fix tab buttons (Sign In / Sign Up selectors at the top) */
+[data-amplify-authenticator] .amplify-tabs__list {
+  @apply flex justify-center items-center gap-4 mb-4;
+}
+
+[data-amplify-authenticator] .amplify-tabs__item {
+  @apply text-xl font-medium text-gray-600 dark:text-white hover:text-[#E9C46A] focus:outline-none transition-all duration-150 hover:cursor-pointer;
+  @apply border-b-2 border-transparent pb-1;
+}
+
+[data-amplify-authenticator] .amplify-tabs__item--active {
+  @apply text-[#F4A261] border-[#F4A261];
+}
+
+/* Tailwind style for input placeholders inside Amplify */
+[data-amplify-authenticator] input::placeholder {
+  @apply text-sm text-gray-400;
+}
+
+/* Link buttons: "Back to Sign In", "Resend Code", etc. */
+[data-amplify-authenticator] .amplify-button--link {
+  @apply text-lg text-blue-600 mt-4 dark:text-white hover:underline inline-block w-auto bg-transparent p-0 m-0 font-normal hover:cursor-pointer;
+}
