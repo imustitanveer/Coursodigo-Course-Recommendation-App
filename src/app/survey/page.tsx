@@ -22,10 +22,8 @@ const SurveyPage = () => {
       })
       .join('; ');
 
-    // ✅ 2. Save it for later use
     localStorage.setItem('userSurveyQuery', formatted);
 
-    // ✅ 3. Optional: Send to FAISS backend
     try {
       const res = await fetch('http://localhost:8000/search', {
         method: 'POST',

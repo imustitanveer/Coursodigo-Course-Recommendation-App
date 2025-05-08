@@ -1,5 +1,6 @@
 import { Sora } from 'next/font/google';
 import { Outfit } from 'next/font/google';
+import Image from 'next/image';
 
 const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
 const Outfit1Font = Outfit({ subsets: ['latin'], weight: '400' });
@@ -12,7 +13,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo and Brand Section */}
             <div className="flex flex-col items-center md:items-start">
-              <img src="/Coursodigo.png" alt="Coursodigo Logo" className="h-12 mb-4" />
+              <Image src="/Coursodigo.png" alt="Coursodigo Logo" className="h-12 mb-4" />
               <p className={`text-xl font-semibold text-white ${OutfitFont.className}`}>Coursódigo</p>
               <p className={`text-md font-medium text-white ${SoraFont.className}`}>
                 Empowering learners with personalized course recommendations.
@@ -32,13 +33,13 @@ export default function Footer() {
             {/* Social Media Icons */}
             <div className="flex justify-center md:justify-start space-x-4">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="/X.png" alt="Twitter" className="w-6 h-6" />
+                <Image src="/X.png" alt="Twitter" className="w-6 h-6" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="/Facebook.png" alt="Facebook" className="w-6 h-6" />
+                <Image src="/Facebook.png" alt="Facebook" className="w-6 h-6" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="/LinkedIn.png" alt="LinkedIn" className="w-6 h-6" />
+                <Image src="/LinkedIn.png" alt="LinkedIn" className="w-6 h-6" />
               </a>
             </div>
           </div>

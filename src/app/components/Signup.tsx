@@ -2,18 +2,18 @@
 
 import { Authenticator } from '@aws-amplify/ui-react';
 import {
-  useTheme,
   useAuthenticator,
 } from '@aws-amplify/ui-react';
 import '@/app/globals.css';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 const components = {
   Header() {
     return (
       <div className="flex justify-center p-6">
-        <img
+        <Image
           src="/Coursodigo.png"
           alt="Coursodigo"
           className="w-16 h-16 rounded"
@@ -98,7 +98,7 @@ const components = {
       );
     },
     Footer() {
-      return <p className="text-sm text-center text-gray-500 dark:text-gray-50 mt-4">We'll send a reset link to your email.</p>;
+      return <p className="text-sm text-center text-gray-500 dark:text-gray-50 mt-4">We&apos;ll send a reset link to your email.</p>;
     },
   },
 
@@ -153,16 +153,16 @@ const formFields = {
   },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function RedirectOnLogin({ user }: { user?: any }) {
   const router = useRouter();
 
   useEffect(() => {
     if (user) {
       const hasCompletedSurvey = localStorage.getItem('hasCompletedSurvey') === 'true';
-
       router.push(hasCompletedSurvey ? '/courses' : '/survey');
     }
-  }, [user]);
+  }, [user, router]);
 
   return <></>;
 }

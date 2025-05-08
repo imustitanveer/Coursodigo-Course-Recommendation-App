@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import CourseCard from '@/app/components/CourseCard'
 import { Poppins } from 'next/font/google';
 
-const apiUrl = process.env.NEXT_PUBLIC_FAISS_API_URL || 'http://localhost:8000';
+// const apiUrl = process.env.NEXT_PUBLIC_FAISS_API_URL || 'http://localhost:8000';
 
 const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
@@ -22,7 +22,7 @@ export default function FeaturedCourses() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch('${apiUrl}/search', {
+        const res = await fetch('http://localhost:8000/search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query: 'beginner ai courses', top_k: 6 })

@@ -18,10 +18,13 @@ export default function AuthenticatedRoute({
       try {
         await getCurrentUser();
         setIsAuthenticated(true);
-      } catch (err) {
+      } catch (
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        err
+      ) {
         console.log('User not authenticated');
         setIsAuthenticated(false);
-        router.replace('/signup'); // 🔁 redirect to login/signup
+        router.replace('/signup');
       } finally {
         setCheckingAuth(false);
       }

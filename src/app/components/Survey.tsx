@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import { Poppins } from 'next/font/google';
+import Image from 'next/image';
 
 const PoppinsFont = Poppins({ subsets: ['latin'], weight: '700' });
 
@@ -154,7 +155,7 @@ const Survey: React.FC<SurveyProps> = ({ onSubmit }) => {
                   }`}
                 >
                   {option.image && (
-                    <img src={option.image} alt={option.label} className="w-12 h-12 mb-2 object-contain" />
+                    <Image src={option.image} alt={option.label} className="w-12 h-12 mb-2 object-contain" />
                   )}
                   {option.label}
                 </button>

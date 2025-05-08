@@ -6,6 +6,7 @@ import { Sora } from 'next/font/google';
 import { getCurrentUser } from 'aws-amplify/auth';
 import { useEffect, useState } from 'react';
 import Logout from './components/Logout';
+import Image from 'next/image';
 
 const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
 const OutfitFont = Outfit({ subsets: ['latin'], weight: '700' });
@@ -22,7 +23,7 @@ export default function Navbar() {
   return (
     <div className="flex bg-[#E76F51]">
       <div className="flex justify-start gap-2 items-center p-4 w-1/2">
-        <img src="/coursodigo.png" alt="Coursodigo" className="w-12 h-12" />
+        <Image src="/coursodigo.png" alt="Coursodigo" className="w-12 h-12" />
         <h1 className={`font-bold text-3xl text-white ${OutfitFont.className}`}>
           <Link href={isLoggedIn ? '/courses' : '/'}>Corsódigo</Link>
         </h1>

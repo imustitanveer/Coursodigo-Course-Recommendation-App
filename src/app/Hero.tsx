@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Epilogue } from 'next/font/google';
 import { Sora } from 'next/font/google';
+import Image from 'next/image';
 
 const EpilogueFont = Epilogue({ subsets: ['latin'], weight: '400' });
 const SoraFont = Sora({ subsets: ['latin'], weight: '400' });
@@ -19,7 +20,7 @@ export default function Hero () {
                 </button>
             </div>
             <div className="mt-0 mx-auto hidden md:block">
-                <img src="/HeroImage.png" alt="Coursodigo" className="w-80 h-80"></img>
+                <Image src="/HeroImage.png" alt="Coursodigo" className="w-80 h-80"/>
             </div>
         </div>
         </>

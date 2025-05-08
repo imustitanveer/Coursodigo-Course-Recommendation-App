@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import CourseCard from '@/app/components/CourseCard';
 import Navbar from '../Navbar';
 import AuthenticatedRoute from '../components/AuthenticatedRoute';
+import Image from 'next/image';
 
-const apiUrl = process.env.NEXT_PUBLIC_FAISS_API_URL || 'http://localhost:8000';
+//const apiUrl = process.env.NEXT_PUBLIC_FAISS_API_URL || 'http://localhost:8000';
 
 interface Course {
   title: string;
@@ -34,7 +35,7 @@ export default function CoursesPage() {
       if (!query) return;
 
       try {
-        const res = await fetch('${apiUrl}/search', {
+        const res = await fetch('http://localhost:8000/search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query, top_k: 15 }), // ✅ increase result count
@@ -59,7 +60,7 @@ export default function CoursesPage() {
 
         {loading ? (
           <div className="flex flex-col h-full items-center justify-center py-20 text-center text-gray-600">
-            <img src="/loading.png" alt="Loading..." className="mb-4 h-80 w-80" />
+            <Image src="/loading.png" alt="Loading..." className="mb-4 h-80 w-80" />
             <p className="text-lg font-medium text-black dark:text-white">
               Please wait while Soko sniffs out the perfect courses for you...
             </p>
